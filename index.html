@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calculate() {
+            const c = 299792;
+            const cquadro = c * c;
+
+            let speedastromum = parseInt(document.getElementById("astromother").value);
+
+            let speedastrodaughter = parseInt(document.getElementById("astrodaughter").value);
+            let resultup = speedastromum + speedastrodaughter;
+            let resultmolt = speedastromum * speedastrodaughter;
+
+            let divdown = resultmolt / cquadro;
+            alert(resultmolt);
+            let add1 = 1 + divdown;
+            let finalresult = resultup / add1;
+            document.getElementById("fromearth").value = finalresult;
+        }
+
+    </script>
+    <form>
+        <p id="explanation">la velocità della luce è quasi 300.000 km/sec per l'esattezza: <strong>299.792
+                km/sec</strong>
+        </p>
+        <label for="astromother">Velocita astronave madre<input type="number" id="astromother"
+                class="feedback-input"></label><br><br>
+        <label for="astrodaughter">Velocita astronave figlia rilevata da astronave madre<input type="number"
+                id="astrodaughter" class="feedback-input"></label><br><br>
+        <input type="button" class="form-control" onclick="calculate()" value="calcola">
+
+        <label>Velocita rilevata da osservatore a terra<input type="number" id="fromearth"
+                class="feedback-input"></label>
+    </form>
+
+</body>
+
+</html>
