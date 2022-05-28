@@ -2,6 +2,7 @@
 
 body {
     background: rgb(30, 30, 40);
+    color: white;
 }
 
 form {
@@ -54,4 +55,28 @@ textarea {
 
 [type="submit"]:hover {
     background: #CC4949;
+}
+
+.explanation {
+    color: white;
+}
+
+#bottone {
+
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-bottom: 30px;
+
+}
+
+.feedback-input {
+    margin-bottom: 40px;
 }

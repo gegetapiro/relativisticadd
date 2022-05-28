@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script>
+        /*  ######################## slider ############################ */
+        var slider = document.getElementById("myRange");
+        // var output = document.getElementById("astromother");
+        // output.innerHTML = slider.value;
+
+        slider.oninput = function () {
+            alert("va");
+            // document.getElementById("astromother").value = this.value;
+            document.getElementById("astromother").value = slider.value;
+        }
+        /*  ################### end slider ################################# */
+        function calculate() {
+            const c = 299792;
+            const cquadro = c * c;
+
+            let speedastromum = parseInt(document.getElementById("astromother").value);
+
+            let speedastrodaughter = parseInt(document.getElementById("astrodaughter").value);
+            let resultup = speedastromum + speedastrodaughter;
+            let resultmolt = speedastromum * speedastrodaughter;
+
+            let divdown = resultmolt / cquadro;
+            alert(resultmolt);
+            let add1 = 1 + divdown;
+            let finalresult = resultup / add1;
+            document.getElementById("fromearth").value = finalresult;
+        }
+    </script>
+
+
+    <form>
+        <p class="explanation">la velocità della luce è quasi 300.000 km/sec per l'esattezza: <strong>299.792
+                km/sec</strong>
+        </p>
+        <!-- ############ prova sliding cursor###################### -->
+        <div class="slidecontainer">
+            <input type="range" min="0" max="300" value="0" class="slider" id="myRange">
+        </div>
+        <!-- ############ fine  prova sliding cursor###################### -->
+        <label for="astromother">Velocita astronave madre<input type="number" id="astromother"
+                class="feedback-input"></label><br><br>
+        <!-- ############ prova sliding cursor###################### -->
+        <div class="slidecontainer">
+            <input type="range" min="0" max="300" value="0" class="slider" id="myRange2">
+        </div>
+        <!-- ############ fine  prova sliding cursor###################### -->
+        <label for="astrodaughter" class="explanation">Velocita astronave figlia rilevata da astronave madre<input
+                type="number" id="astrodaughter" class="feedback-input"></label><br><br>
+
+        <input type="button" class="form-control" id="bottone" onclick="calculate()" value="calcola"><br><br>
+
+        <label class="explanation">Velocita rilevata da osservatore a terra<input type="number" id="fromearth"
+                class="feedback-input" disabled></label>
+    </form>
+
+
+
+</body>
+
+</html>
